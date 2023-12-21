@@ -1,0 +1,30 @@
+/* styles.css */
+
+body {
+	background-color: #1a1a1a; /* Dark background color */
+	color: #ffffff; /* Light text color */
+	font-family: "Arial", sans-serif; /* Choose a suitable font family */
+}
+
+#app {
+	background-color: #2d2d2d; /* Slightly lighter background color for the app container */
+	padding: 20px;
+	border-radius: 8px; /* Optional: Add rounded corners to the app container */
+}
+
+h2 {
+	color: #ffcc00; /* Accent color for headings */
+}
+
+button {
+	background-color: #4caf50; /* Green button background color */
+	color: #ffffff; /* Button text color */
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #45a049; /* Darker green on hover */
+}

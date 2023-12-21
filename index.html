@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="main.js"></script>
+		<script src="model/model.js"></script>
+		<link rel="stylesheet" href="css/stylesheet.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h2 class="text-3xl font-bold underline italic">
+			Javascript beginner tasks
+		</h2>
+		<button type="button" onclick="updateView('todoList')">TodoList</button>
+		<button type="button" onclick="updateView('clickerGame')">
+			ClickerGame
+		</button>
+
+		<div id="app"></div>
+
+		<script>
+			let appDiv = document.getElementById("app");
+
+			function updateView(pageKey) {
+				const page = model.app.pages[pageKey];
+
+				if (page) {
+					model.app.currentPage = pageKey;
+
+					fetch(`views/${page.path}.html`)
+						.then((response) => response.text())
+						.then((html) => {
+							appDiv.innerHTML = html;
+						})
+						.catch((error) =>
+							console.error(
+								"An error occured while trying to load a view: ",
+								error
+							)
+						);
+				}
+			}
+		</script>
+	</body>
+</html>
